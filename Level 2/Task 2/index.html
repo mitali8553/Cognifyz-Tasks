@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delicious Bites | Responsive Food Webpage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f57c00, #f39c12);
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    /* Hamburger Icon */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background: white;
+      margin: 5px;
+      transition: 0.3s ease;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #f39c12;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Content Styling */
+    .content {
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .content h2 {
+      font-size: 2.5rem;
+      color: #f57c00;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    /* Box Styling */
+    .boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .box {
+      background: #ffe0b2;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: #e67e22;
+    }
+
+    .box p {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive Box Layout */
+    @media (max-width: 768px) {
+      .boxes {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Delicious Bites</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h2>Welcome to Delicious Bites</h2>
+    <p>Explore mouthwatering dishes, easy-to-cook recipes, and foodie inspiration from around the world!</p>
+
+    <div class="boxes">
+      <div class="box">
+        <h3>🍕 Italian Pizza</h3>
+        <p>Wood-fired, cheesy, and topped with fresh herbs. Perfect for any occasion.</p>
+      </div>
+      <div class="box">
+        <h3>🍣 Sushi Rolls</h3>
+        <p>Delicate rice rolls wrapped with seaweed and fresh fish or veggies.</p>
+      </div>
+      <div class="box">
+        <h3>🍰 Chocolate Cake</h3>
+        <p>Moist, rich, and topped with creamy ganache — a dessert lover’s dream!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Foodie</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero {
+      background-image: url('images/1.jpg'); 
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      position: relative;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff4757;
+    }
+
+    .nav-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-form input[type="text"] {
+      padding: 6px 10px;
+      width: 180px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .nav-form input[type="submit"] {
+      padding: 6px 12px;
+      background-color: #ff4757;
+      border: none;
+      color: white;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-form input[type="submit"]:hover {
+      background-color: #e84118;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .navbar a {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      .nav-form {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-form input[type="text"],
+      .nav-form input[type="submit"] {
+        width: 100%;
+      }
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 60px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .hero-content p {
+      margin-top: 20px;
+      font-size: 24px;
+      color: white;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="navbar">
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </div>
+<form action="#" method="post" class="nav-form">
+  <input type="text" name="ingredient" placeholder="e.g., chicken, tomato..." required>
+  <input type="submit" value="Find Recipes 🍳">
+</form>
+    </div>
+
+<div class="hero-content">
+  <h1>Foodie</h1>
+  <p>Got ingredients? Let's whip up something delicious! Type your ingredient and explore recipes instantly.</p>
+</div>
+  </section>
+</body>
+</html>

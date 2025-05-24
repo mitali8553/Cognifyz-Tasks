@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Cards - Bulma + Bootstrap</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      min-height: 100vh;
+    }
+    .card {
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+    .card-content {
+      padding-bottom: 1.5rem;
+    }
+    .order-btn {
+      margin-top: 10px;
+    }
+    .title {
+      color: #d35400;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="mb-5 text-center title is-3">🍽 Popular Food Dishes</h2>
+  <div class="row">
+    <!-- Card 1: Pizza -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-3">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="images/pizza.jpg" alt="Pizza" class="rounded">
+          </figure>
+        </div>
+        <div class="card-content text-center">
+          <p class="title is-5">Cheesy Pizza</p>
+          <p>A crispy, gooey delight loaded with mozzarella and fresh toppings.</p>
+          <button class="button is-warning order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Burger -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-3">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="images/burger.jpg" alt="Burger" class="rounded">
+          </figure>
+        </div>
+        <div class="card-content text-center">
+          <p class="title is-5">Juicy Burger</p>
+          <p>Flame-grilled to perfection with fresh greens and creamy sauces.</p>
+          <button class="button is-warning order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Sushi -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-3">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="images/sushi.jpg" alt="Sushi" class="rounded">
+          </figure>
+        </div>
+        <div class="card-content text-center">
+          <p class="title is-5">Fresh Sushi</p>
+          <p>Artfully rolled with the finest cuts of fish, rice, and seaweed.</p>
+          <button class="button is-warning order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

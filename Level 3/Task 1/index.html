@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Foodie Image Gallery & Slideshow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffef2;
+  color: #333;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 10px;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Slideshow */
+.slideshow {
+  width: 100vw;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Makes slideshow responsive */
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: calc(100vw * 5); /* 5 images */
+  animation: slide 20s infinite ease-in-out;
+}
+
+.slides img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Keyframes for auto-sliding */
+@keyframes slide {
+  0%, 20%   { transform: translateX(0); }
+  25%, 45%  { transform: translateX(-100vw); }
+  50%, 70%  { transform: translateX(-200vw); }
+  75%, 95%  { transform: translateX(-300vw); }
+  100%      { transform: translateX(-400vw); }
+}
+
+/* Gallery Section */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 30px;
+  justify-content: center;
+}
+
+.gallery a {
+  flex: 1 0 150px;
+  max-width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.gallery a:hover {
+  transform: scale(1.05);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fff;
+}
+
+/* Lightbox Close Button */
+.lightbox a.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.lightbox a.close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍕 Foodie Gallery & Slideshow 🍩</h1>
+  </header>
+
+  <!-- Auto Slideshow -->
+  <section class="slideshow">
+    <div class="slides">
+      <img src="images/pizza.jpg" alt="Pizza">
+      <img src="images/burger.jpg" alt="Burger">
+      <img src="images/sushi.jpg" alt="Sushi">
+      <img src="images/pasta.jpg" alt="Pasta">
+      <img src="images/dessert.jpg" alt="Dessert"> 
+    </div>
+  </section>
+
+  <!-- Image Gallery -->
+  <section class="gallery">
+    <a href="#img1"><img src="images/pizza.jpg" alt="Pizza"></a>
+    <a href="#img2"><img src="images/burger.jpg" alt="Burger"></a>
+    <a href="#img3"><img src="images/cake.jpg" alt="Cake"></a>
+    <a href="#img4"><img src="images/salad.jpg" alt="Salad"></a>
+    <a href="#img5"><img src="images/icecream.jpg" alt="Ice Cream"></a>
+  </section>
+
+  <!-- Lightbox Views -->
+  <div class="lightbox" id="img1">
+    <a href="#" class="close">✖</a>
+    <img src="images/pizza.jpg" alt="Pizza">
+  </div>
+  <div class="lightbox" id="img2">
+    <a href="#" class="close">✖</a>
+    <img src="images/burger.jpg" alt="Burger">
+  </div>
+  <div class="lightbox" id="img3">
+    <a href="#" class="close">✖</a>
+    <img src="images/cake.jpg" alt="Cake">
+  </div>
+  <div class="lightbox" id="img4">
+    <a href="#" class="close">✖</a>
+    <img src="images/salad.jpg" alt="Salad">
+  </div>
+  <div class="lightbox" id="img5">
+    <a href="#" class="close">✖</a>
+    <img src="images/icecream.jpg" alt="Ice Cream">
+  </div>
+
+</body>
+</html>
